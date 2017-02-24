@@ -1,0 +1,1 @@
+{"version":3,"sources":["../js/index.js"],"names":["title","React","createElement","id","className","ReactDOM","render","document","getElementById"],"mappings":"AAAA,KAAMA,OAAQC,MAAMC,cACnB,MACEC,GAAI,QAASC,UAAW,UAC1B,cAGDC,UAASC,OACRN,MACAO,SAASC,eAAe","file":"index.min.js"}
