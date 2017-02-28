@@ -1,6 +1,17 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
+    	babel: {
+	        options: {
+	            sourceMap: true,
+	            presets: ['es2015']
+	        },
+	        dist: {
+	            files: {
+	            	'src/index.js': 'js/index.js'
+	            }
+	        }
+	    },
         uglify: {
 			options: {
 				sourceMap: true,
@@ -8,17 +19,18 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 				files: {
-					'src/index.min.js': ['js/index.js']
+					'src/index.min.js': 'src/index.js'
 				}
 			}
         }
     });
 
     // Load plugin
-    grunt.loadNpmTasks("grunt-contrib-uglify");
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-babel');
 
     // Task
-    //grunt.registerTask("base", ["typescript:base"]);
+    grunt.registerTask('default', ['babel', 'uglify']);
     //grunt.registerTask("watch", ["typescript:watch"]);
 
 };
