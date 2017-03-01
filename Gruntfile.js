@@ -4,11 +4,17 @@ module.exports = function(grunt) {
     	babel: {
 	        options: {
 	            sourceMap: true,
+	            plugins: ['transform-react-jsx'],
 	            presets: ['es2015']
 	        },
+			jsx: {
+				files: {
+					'src/index.js': 'js/index.js'
+				}
+			},
 	        dist: {
 	            files: {
-	            	'src/index.js': 'js/index.js'
+	            	'src/index.js': 'src/index.js'
 	            }
 	        }
 	    },
@@ -31,6 +37,7 @@ module.exports = function(grunt) {
 
     // Task
     grunt.registerTask('default', ['babel', 'uglify']);
-    //grunt.registerTask("watch", ["typescript:watch"]);
-
+    
+    // JSX
+    grunt.registerTask("jsx", ["babel:jsx"]);
 };
