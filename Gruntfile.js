@@ -28,12 +28,22 @@ module.exports = function(grunt) {
 					'src/index.min.js': 'src/index.js'
 				}
 			}
-        }
+        },
+		watch: {
+			scripts: {
+				files: ['js/*.js'],
+				tasks: ['babel', 'uglify'],
+				 options: {
+			      spawn: false,
+			    }
+			}	
+		}
     });
 
     // Load plugin
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Task
     grunt.registerTask('default', ['babel', 'uglify']);

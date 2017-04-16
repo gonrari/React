@@ -12,6 +12,7 @@
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
     "grunt-contrib-uglify": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0",
     "lite-server": "^2.2.2"
   },
   "scripts": {
